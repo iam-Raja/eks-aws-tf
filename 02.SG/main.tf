@@ -158,7 +158,7 @@ resource "aws_security_group_rule" "node_vpc" {
   to_port           = 65535
   protocol          = "-1" # All traffic
   cidr_blocks = ["10.0.0.0/16"]
-  security_group_id = module.node.sg_id
+  security_group_id = module.nodes.sg_id
 }
 
 
