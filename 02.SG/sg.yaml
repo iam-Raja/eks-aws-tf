@@ -1,0 +1,59 @@
+SG:
+ - frontend
+ - backend
+ - db
+ - bastion
+ - ansible
+# db is manged by aws so it won't allow ssh, if we need to config then directly from ui only 
+db: 
+ - name : db_backend
+   desc: db accepting traffic from backend
+   port: 3306
+   source: backend
+ - name : db_bastion
+   desc: db accepting traffic from backend
+   port: 3306
+   source: bastion
+
+backend:
+ - name : backend_frontend
+   desc: backend accepting traffic from frontend
+   port: 8080
+   source: frontend
+ - name : backend_bastion
+   desc: backend accepting traffic from bastion
+   port: 22
+   source: bastion 
+ - name : backend_ansible
+   desc: backend accepting traffic from ansible
+   port: 22
+   source: ansible
+
+frontend:
+ - name : frontend_public
+   desc: frontend accepting traffic from public
+   port: 80
+   source: public
+ - name : frontend_ansible
+   desc: frontend accepting traffic from ansible
+   port: 22
+   source: ansible   
+
+bastion:
+ - name : bastion_public
+   desc: bastion accepting traffic from public
+   port: 22
+   source: public
+
+ansible:
+ - name : ansible_public
+   desc: ansible accepting traffic from public
+   port: 22
+   source: public
+
+
+    
+
+
+
+ 

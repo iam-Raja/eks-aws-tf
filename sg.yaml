@@ -1,0 +1,45 @@
+SG:
+- Ingress
+- nodes
+- cluster
+- bastion
+
+Ingress:
+- name: Ingress_public
+  desc: Ingress accepting traffic from public
+  source: public
+  port: 80
+
+Nodes:  
+- name: nodes_ingress
+  desc: nodes accepting from Ingress
+  source: Ingress
+  port: 0-65535
+
+- name:  nodes_cluster
+  desc: nodes accepting from cluster
+  source: cluster
+  port: 0-65535
+
+- name:  nodes_bastion
+  desc: nodes accepting from bastion
+  source: bastion
+  port: 22
+
+Cluster:
+- name: cluster_bastion
+  desc: cluster accepting from bastion
+  source: bastion
+  port:
+
+- name: cluster_nodes
+  desc: cluster accepting from nodes
+  source: nodes
+  port: 
+
+- bastion:
+- name: bastion_public
+  desc: bastion accepting traffic from public
+  source: public
+  port: 22
+
