@@ -3,7 +3,7 @@ data "aws_ssm_parameter" "subnet_public" {
 }
 
 data "aws_ssm_parameter" "sg_id_bastion" {
-  name = "/${var.project_name}/${var.environment}/SG_ID_BASTION"
+  name = "/${var.project_name}/${var.environment}/sg_id_bastion"
 }
 
 data "aws_ami" "ami_info" {
