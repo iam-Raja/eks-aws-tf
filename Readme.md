@@ -3,3 +3,4 @@
 
 **Expense-EKS-Arch**
 
+![alt text](eks-infra.svg)
