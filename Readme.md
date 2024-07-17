@@ -8,13 +8,13 @@
 
 ## To Push to ECR ##
 ```
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 315069654700.dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region <regin-name> | docker login --username AWS --password-stdin <Account-id>.dkr.ecr.<regin-name>.amazonaws.com
 ```
 
 ```
-docker build -t 315069654700.dkr.ecr.us-east-1.amazonaws.com/expense-backend:latest .
+docker build -t <Account-id>.dkr.ecr.<regin-name>.amazonaws.com/expense-backend:latest .
 ```
 
 ```
-docker push 315069654700.dkr.ecr.us-east-1.amazonaws.com/expense-backend:latest
+docker push <Account-id>.dkr.ecr.<regin-name>.amazonaws.com/expense-backend:latest
 ```
